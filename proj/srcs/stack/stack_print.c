@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 14:20:41 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 17:10:25 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/20 18:22:14 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	stack_print(t_stack *a, t_stack *b)
 //	print_stack_size(a, b);
 	while (i < size)
 	{
-		if (i < a->size && cur_b)
+		if (i < a->size && cur_a)
 		{
 			printf("%d", cur_a->value);
 			cur_a = cur_a->next;

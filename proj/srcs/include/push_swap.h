@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:32 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 16:09:10 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/20 20:09:58 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,16 @@ t_stack	*nodeadd(t_stack *stack, t_node *new);
 t_stack	*nodecut(t_stack *stack);
 
 /*process*/
-void	push_swap(size_t nbr, char *param[]);
+void	push_swap(t_stack *a, t_stack *b);
 
 /*check*/
 int		check_param(size_t cnt, char *param[]);
+
+/*sort*/
+void	sort_two(t_stack *stack);
+void	sort_three_asc(t_stack *stack);
+void	sort_three_dec(t_stack *stack);
+void	sort_ufive(t_stack *a, t_stack *b);
 
 /*operate*/
 void	sa(t_stack *a);
