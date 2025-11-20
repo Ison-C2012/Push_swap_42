@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:32 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 20:09:58 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/20 23:22:10 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ typedef struct s_stack
 
 /*stack*/
 t_stack	*stack_create(char **param, size_t size);
-void	stack_print(t_stack *a, t_stack *b);
+t_stack	*stack_movehead(t_stack *stack, size_t len, void (*f)(t_stack*));
+void	stack_free(t_stack *stack);
 
 /*node*/
 t_node	*nodenew(int value);
@@ -55,10 +56,12 @@ void	push_swap(t_stack *a, t_stack *b);
 int		check_param(size_t cnt, char *param[]);
 
 /*sort*/
-void	sort_two(t_stack *stack);
+void	sort_two_asc(t_stack *stack);
+void	sort_two_dec(t_stack *stack);
 void	sort_three_asc(t_stack *stack);
 void	sort_three_dec(t_stack *stack);
 void	sort_ufive(t_stack *a, t_stack *b);
+size_t	getlen_tomin(t_stack *stack);
 
 /*operate*/
 void	sa(t_stack *a);
@@ -85,5 +88,6 @@ void	print_rr(void);
 void	print_rra(void);
 void	print_rrb(void);
 void	print_rrr(void);
+void	print_stack(t_stack *a, t_stack *b);
 
 #endif

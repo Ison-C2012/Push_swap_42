@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_print.c                                      :+:      :+:    :+:   */
+/*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -17,7 +17,7 @@ void	print_stack_size(t_stack *a, t_stack *b)
 	ft_printf("a:%d\tb:%d\n", a->size, b->size);
 }
 
-void	stack_print(t_stack *a, t_stack *b)
+void	print_stack(t_stack *a, t_stack *b)
 {
 	t_node	*cur_a;
 	t_node	*cur_b;

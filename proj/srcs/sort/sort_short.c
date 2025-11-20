@@ -6,14 +6,13 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 18:52:38 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 20:15:12 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/20 23:07:45 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* ************************************************************************** */
-void	sort_two(t_stack *stack)
+void	sort_two_asc(t_stack *stack)
 {
 	int	x;
 	int	y;
@@ -24,7 +23,17 @@ void	sort_two(t_stack *stack)
 		sa(stack);
 }
 
-/* ************************************************************************** */
+void	sort_two_dec(t_stack *stack)
+{
+	int	x;
+	int	y;
+
+	x = stack->head->value;
+	y = stack->head->next->value;
+	if (x < y)
+		sa(stack);
+}
+
 void	sort_three_asc(t_stack *stack)
 {
 	int	x;
@@ -54,7 +63,6 @@ void	sort_three_asc(t_stack *stack)
 		ra(stack);
 }
 
-/* ************************************************************************** */
 void	sort_three_dec(t_stack *stack)
 {
 	int	x;
@@ -84,31 +92,21 @@ void	sort_three_dec(t_stack *stack)
 		sa(stack);
 }
 
-/* ************************************************************************** */
 void	sort_ufive(t_stack *a, t_stack *b)
 {
-	size_t	i;
+	size_t	len;
 
-	i = 0;
-	while (i < 3)
+	while (a->size > 3)
 	{
-		if (a->head->value < a->head->next->value)
-		{
-			if (a->head->value > a->head->prev->value)
-				rra(a);
-		}
+		len = getlen_tomin(a);
+		if (a->size - len > len)
+			a = stack_movehead(a, len, &ra);
 		else
-		{
-			if (a->head->next->value < a->head->prev->value)
-				sa(a);
-			else
-				rra(a);
-		}
+			a = stack_movehead(a, a->size - len, &rra);
 		pb(b, a);
-		i++;
 	}
-	sort_two(a);
-	sort_three_dec(b);
-	while (i--)
+	sort_three_asc(a);
+	sort_two_dec(b);
+	while (b->size)
 		pa(a, b);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_create.c                                     :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 11:37:08 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 16:09:39 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/20 23:21:06 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,33 @@ t_stack	*stack_create(char **param, size_t size)
 	{
 		newnode = nodenew(ft_atoi(param[size]));
 		if (newnode == NULL)
+		{
+			stack_free(stack);
 			return (NULL);
+		}
 		stack = nodeadd(stack, newnode);
 	}
 	return (stack);
 }
+
+t_stack	*stack_movehead(t_stack *stack, size_t len, void (*f)(t_stack*))
+{
+	while (len--)
+		f(stack);
+	return (stack);
+}
+
+void	stack_free(t_stack *stack)
+{
+	t_node	*tmp;
+
+	while (stack->size)
+	{
+		tmp = stack->head->next;
+		free(stack->head);
+		stack->head = tmp;
+		stack->size--;
+	}
+	free(stack);
+}
+

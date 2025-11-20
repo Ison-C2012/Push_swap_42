@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:14:54 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 18:35:33 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/20 23:17:01 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ int	main(int argc, char *argv[])
 		return (error());
 	a = stack_create(&argv[1], argc - 1);
 	b = stack_create((char **)NULL, 0);
-	stack_print(a, b);
+	print_stack(a, b);
 	push_swap(a, b);
-	stack_print(a, b);
+	print_stack(a, b);
+	stack_free(a);
+	stack_free(b);
 	return (0);
 }
