@@ -5,9 +5,22 @@ SRCDIR	:=	srcs
 OBJDIR	:=	objs
 ARCDIR	:=	libft
 
-SRCS	:=	check_param.c \
-			main.c \
-			push_swap.c
+SRCS	:=	check/check_param.c \
+			main/main.c \
+			node/node.c \
+			operate/push.c \
+			operate/rev_rotate.c \
+			operate/rotate.c \
+			operate/swap.c \
+			print/print_push.c \
+			print/print_rotate.c \
+			print/print_rrotate.c \
+			print/print_stack.c \
+			print/print_swap.c \
+			process/push_swap.c \
+			sort/sort_helper.c \
+			sort/sort_short.c \
+			stack/stack.c 
 OBJS	:=	$(SRCS:%.c=$(OBJDIR)/%.o)
 ARCS	:=	libft.a
 
@@ -19,11 +32,11 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@make -C $(ARCDIR)
-	$(CC) $(CFLAGS) -I $(INCDIR) $(OBJS) -o $@
+	$(CC) $(CFLAGS) -I $(INCDIR) $(OBJS)  $(ARCDIR)/$(ARCS) -o $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(MKDIR) $(dir $@)
-	$(CC) $(CFLAGS) -I $(INCDIR) -c $<  $(ARCDIR)/$(ARCS) -o $@
+	$(CC) $(CFLAGS) -I $(INCDIR) -c $<  -o $@
 
 clean: 
 	@make -C $(ARCDIR) clean

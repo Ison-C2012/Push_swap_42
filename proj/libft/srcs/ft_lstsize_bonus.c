@@ -6,13 +6,13 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 17:16:58 by keitotak          #+#    #+#             */
-/*   Updated: 2025/10/28 21:47:04 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/21 00:18:34 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	size;
 

@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 11:37:08 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 23:21:06 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/21 00:14:48 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,3 @@ void	stack_free(t_stack *stack)
 	}
 	free(stack);
 }
-

@@ -6,90 +6,61 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 18:52:38 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 23:07:45 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/20 23:58:13 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_two_asc(t_stack *stack)
+void	sort_two_asc_a(t_stack *a)
 {
 	int	x;
 	int	y;
 
-	x = stack->head->value;
-	y = stack->head->next->value;
+	x = a->head->value;
+	y = a->head->next->value;
 	if (x > y)
-		sa(stack);
+		sa(a);
 }
 
-void	sort_two_dec(t_stack *stack)
+void	sort_three_asc_a(t_stack *a)
+{
+	int	x;
+	int	y;
+	int	z;
+
+	x = a->head->value;
+	y = a->head->next->value;
+	z = a->head->prev->value;
+	if (x < y && y < z)
+		return ;
+	else if (x < y && x < z)
+	{
+		rra(a);
+		sa(a);
+	}
+	else if (x < y && x > z)
+		rra(a);
+	else if (x > y && y > z)
+	{
+		sa(a);
+		rra(a);
+	}
+	else if (x > y && x < z)
+		sa(a);
+	else
+		ra(a);
+}
+
+void	sort_two_dec_b(t_stack *b)
 {
 	int	x;
 	int	y;
 
-	x = stack->head->value;
-	y = stack->head->next->value;
+	x = b->head->value;
+	y = b->head->next->value;
 	if (x < y)
-		sa(stack);
-}
-
-void	sort_three_asc(t_stack *stack)
-{
-	int	x;
-	int	y;
-	int	z;
-
-	x = stack->head->value;
-	y = stack->head->next->value;
-	z = stack->head->prev->value;
-	if (x < y && y < z)
-		return ;
-	else if (x < y && x < z)
-	{
-		rra(stack);
-		sa(stack);
-	}
-	else if (x < y && x > z)
-		rra(stack);
-	else if (x > y && y > z)
-	{
-		sa(stack);
-		rra(stack);
-	}
-	else if (x > y && x < z)
-		sa(stack);
-	else
-		ra(stack);
-}
-
-void	sort_three_dec(t_stack *stack)
-{
-	int	x;
-	int	y;
-	int	z;
-
-	x = stack->head->value;
-	y = stack->head->next->value;
-	z = stack->head->prev->value;
-	if (x < y && y < z)
-	{
-		sa(stack);
-		rra(stack);
-	}
-	else if (x < y && x < z)
-		rra(stack);
-	else if (x < y && x > z)
-	{
-		rra(stack);
-		sa(stack);
-	}
-	else if (x > y && y > z)
-		return ;
-	else if (x > y && x < z)
-		ra(stack);
-	else
-		sa(stack);
+		sb(b);
 }
 
 void	sort_ufive(t_stack *a, t_stack *b)
@@ -105,8 +76,8 @@ void	sort_ufive(t_stack *a, t_stack *b)
 			a = stack_movehead(a, a->size - len, &rra);
 		pb(b, a);
 	}
-	sort_three_asc(a);
-	sort_two_dec(b);
+	sort_three_asc_a(a);
+	sort_two_dec_b(b);
 	while (b->size)
 		pa(a, b);
 }

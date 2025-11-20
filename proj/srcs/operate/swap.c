@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 00:36:48 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 11:09:16 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/20 23:42:12 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	sb(t_stack *b)
 
 void	ss(t_stack *a, t_stack *b)
 {
-	sa(a);
-	sb(b);
+	swap(a);
+	swap(b);
 	print_ss();
 }

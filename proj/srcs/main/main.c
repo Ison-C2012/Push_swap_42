@@ -6,14 +6,14 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:14:54 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 23:17:01 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/21 00:10:09 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-# define NO_PARAM 1
-# define ERROR 1
+#define NO_PARAM 1
+#define ERROR 1
 
 int	error(void)
 {
@@ -33,10 +33,8 @@ int	main(int argc, char *argv[])
 	if (check_param(argc - 1, &argv[1]))
 		return (error());
 	a = stack_create(&argv[1], argc - 1);
-	b = stack_create((char **)NULL, 0);
-	print_stack(a, b);
+	b = stack_create((char **) NULL, 0);
 	push_swap(a, b);
-	print_stack(a, b);
 	stack_free(a);
 	stack_free(b);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 23:05:24 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/02 21:32:19 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/21 00:18:50 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	l_len;
-
 
 	l_len = ft_strlen(little);
 	if (l_len == 0)

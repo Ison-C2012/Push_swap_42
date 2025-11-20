@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   rev_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,26 +12,26 @@
 
 #include "push_swap.h"
 
-static void	reverse_rotate(t_stack *stack)
+static void	rev_rotate(t_stack *stack)
 {
 	stack->head = stack->head->prev;
 }
 
 void	rra(t_stack *a)
 {
-	reverse_rotate(a);
+	rev_rotate(a);
 	print_rra();
 }
 
 void	rrb(t_stack *b)
 {
-	reverse_rotate(b);
+	rev_rotate(b);
 	print_rrb();
 }
 
 void	rrr(t_stack *a, t_stack *b)
 {
-	reverse_rotate(a);
-	reverse_rotate(b);
+	rev_rotate(a);
+	rev_rotate(b);
 	print_rrr();
 }
