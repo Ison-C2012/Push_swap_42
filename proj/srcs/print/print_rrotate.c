@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nodenew.c                                          :+:      :+:    :+:   */
+/*   print_rrotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 01:25:03 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 01:28:11 by keitotak         ###   ########.fr       */
+/*   Created: 2025/11/20 10:45:47 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/20 12:54:00 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	nodenew(int *value)
+void	print_rra(void)
 {
-	t_node	*new;
+	ft_putendl_fd("rra", STDOUT);
+}
 
-	new = (t_node *)malloc(1 * sizeof(t_node));
-	if (new == NULL)
-		return (NULL);
+void	print_rrb(void)
+{
+	ft_putendl_fd("rrb", STDOUT);
+}
 
+void	print_rrr(void)
+{
+	ft_putendl_fd("rrr", STDOUT);
 }

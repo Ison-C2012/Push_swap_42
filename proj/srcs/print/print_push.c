@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   print_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 00:53:03 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 01:00:24 by keitotak         ###   ########.fr       */
+/*   Created: 2025/11/20 10:41:23 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/20 12:52:12 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(t_stack *stack)
+void	print_pa(void)
 {
-	stack->head = stack->head->prev;
+	ft_putendl_fd("pa", STDOUT);
 }
 
-void	rra(t_stack *a)
+void	print_pb(void)
 {
-	reverse_rotate(a);
-}
-
-void	rrb(t_stack *b)
-{
-	reverse_rotate(b);
-}
-
-void	rrr(t_stack *a, t_stack *b)
-{
-	reverse_rotate(a);
-	reverse_rotate(b);
+	ft_putendl_fd("pb", STDOUT);
 }

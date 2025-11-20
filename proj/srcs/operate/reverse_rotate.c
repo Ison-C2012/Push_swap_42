@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 00:36:48 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 01:09:08 by keitotak         ###   ########.fr       */
+/*   Created: 2025/11/20 00:53:03 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/20 11:08:35 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack *stack)
+static void	reverse_rotate(t_stack *stack)
 {
-	int	tmp;
-
-	tmp = stack->head->value;
-	stack->head->value = stack->head->next->value;
-	stack->head->next->value = tmp;
+	stack->head = stack->head->prev;
 }
 
-void	sa(t_stack *a)
+void	rra(t_stack *a)
 {
-	swap(a);
-	ft_printf("sa\n");
+	reverse_rotate(a);
+	print_rra();
 }
 
-void	sb(t_stack *b)
+void	rrb(t_stack *b)
 {
-	swap(b);
-	ft_printf("sb\n");
+	reverse_rotate(b);
+	print_rrb();
 }
 
-void	ss(t_stack *a, t_stack *b)
+void	rrr(t_stack *a, t_stack *b)
 {
-	sa(a);
-	sb(b);
-	ft_printf("ss\n");
+	reverse_rotate(a);
+	reverse_rotate(b);
+	print_rrr();
 }

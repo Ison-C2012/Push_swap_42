@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 00:53:03 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 01:20:11 by keitotak         ###   ########.fr       */
+/*   Created: 2025/11/20 00:36:48 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/20 11:09:16 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack *to, t_stack *from)
+static void	swap(t_stack *stack)
 {
-	if (from->size == 0)
-		return ;
-	nodeadd_head(to, from->head);
-	if (from->size == 1)
-		stackinit(from);
-	else if (from->size == 2)
-		nodedelone(from->head);
-	else
-	{
-		nodedelone(from->head);
-		from->head->prev = nodelast(from->head);
-	}
+	int	tmp;
+
+	tmp = stack->head->value;
+	stack->head->value = stack->head->next->value;
+	stack->head->next->value = tmp;
 }
 
-void	pa(t_stack *a, t_stack *b)
+void	sa(t_stack *a)
 {
-	push(a, b);
-	ft_printf("pa\n");
+	swap(a);
+	print_sa();
 }
 
-void	pb(t_stack *b, t_stack *a)
+void	sb(t_stack *b)
 {
-	push(b, a);
-	ft_printf("pb\n");
+	swap(b);
+	print_sb();
+}
+
+void	ss(t_stack *a, t_stack *b)
+{
+	sa(a);
+	sb(b);
+	print_ss();
 }

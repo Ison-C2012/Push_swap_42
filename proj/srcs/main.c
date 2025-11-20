@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:14:54 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 00:29:06 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/20 17:06:21 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,22 @@
 
 int	main(int argc, char *argv[])
 {
+	t_stack	*a;
+	t_stack	*b;
+
 	if (argc == NO_PARAM)
 		return (0);
 	if (check_param(argc - 1, &argv[1]))
 		return (INVALID_PARAM);
-	push_swap(argc - 1, &argv[1]);
+	a = stack_create(&argv[1], argc - 1);
+	b = stack_create((char **)NULL, 0);
+	stack_print(a, b);
+	pb(b, a);
+	stack_print(a, b);
+	pb(b, a);
+	stack_print(a, b);
+	pb(b, a);
+	stack_print(a, b);
+	//push_swap(a, b);
 	return (0);
 }
