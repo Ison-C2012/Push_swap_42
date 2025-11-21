@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:23:48 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 11:19:47 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/21 15:44:15 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ void	push_swap(t_stack *a, t_stack *b)
 	else if (size <= 5)
 		sort_ufive(a, b);
 	else
-		sort_long(a, b);
+	{
+		node_setindex(a);
+		print_stack_index(a);
+//		sort_long(a, b);
+	}
 	return ;
 }

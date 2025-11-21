@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 12:01:27 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 12:03:01 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/21 16:11:19 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,5 @@ int	getlen_ascend(t_stack *stack)
 
 	forwd = getlen_asc_forwd(stack);
 	back = getlen_asc_back(stack);
-	len = forwd * (forwd >= back) - back * (forwd < back);
-	return (len);
+	return (forwd * (forwd >= back) - back * (forwd < back));
 }

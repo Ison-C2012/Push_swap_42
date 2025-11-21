@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_param.c                                      :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:41:28 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 11:09:35 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/21 19:32:01 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*You must delete this function when you submit your project.
- This function is used only to detect error for test.*/
-/*int	ed(int err, char c)
+void	error(void)
 {
-	printf("%c\n", c);
-	return (err);
-}*/
+	ft_putendl_fd("Error", STDOUT);
+	return ;
+}
 
-static int	ft_issign(char c)
+int	is_sign(char c)
 {
 	return (c == '+' || c == '-');
 }
 
-static int	is_nbr(char *str)
+int	is_number(char *str)
 {
 	int	sign;
 
 	sign = 0;
 	while (*str)
 	{
-		if (ft_issign(*str))
+		if (is_sign(*str))
 		{
 			sign++;
 			str++;
@@ -44,32 +42,24 @@ static int	is_nbr(char *str)
 	return (TRUE);
 }
 
-static int	is_exist(char **param, size_t index)
+int	is_integer_int(char *str)
 {
-	size_t	i;
+	long	integer;
+	int		minus;
 
-	i = 0;
-	while (i < index)
+	integer = 0;
+	minus = 0;
+	if (is_sign(*str))
+		minus = (*str++ == '-');
+	while (*str)
 	{
-		if (ft_strncmp(param[i], param[index], ft_strlen(param[i])) == 0)
-			return (FALSE);
-		i++;
+		integer *= 10;
+		integer += *str - '0';
+		str++;
 	}
-	return (TRUE);
-}
-
-int	check_param(size_t cnt, char **param)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < cnt)
-	{
-		if (is_nbr(param[i]) == FALSE)
-			return (FALSE);
-		if (is_exist(param, i) == FALSE)
-			return (FALSE);
-		i++;
-	}
+	if (minus)
+		integer *= -1;
+	if (integer > INT_MAX || integer < INT_MIN)
+		return (FALSE);
 	return (TRUE);
 }

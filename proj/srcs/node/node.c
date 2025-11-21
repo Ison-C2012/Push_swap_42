@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 01:25:03 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 16:25:09 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/21 15:54:47 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,45 @@ t_stack	*nodeadd(t_stack *stack, t_node *new)
 	stack->head = new;
 	stack->size += 1;
 	return (stack);
+}
+
+/*
+void	stack_setvalue(t_stack *stack, long *arr)
+{
+	t_node	*node;
+	size_t	i;
+
+	node = stack->head;
+	i = 0;
+	while (i < stack->size)
+	{
+		node->value = arr[i];
+		node = node->next;
+		i++;
+	}
+}
+*/
+
+//void	stack_setindex(t_stack *stack, long *arr)
+
+void	node_setindex(t_stack *stack)
+{
+	long	*arr;
+	t_node	*node;
+	size_t	i;
+
+	arr = (long *)malloc(stack->size * sizeof(long));
+	if (arr == NULL)
+		exit(1);
+	arr = get_arr(arr, stack->head, stack->size);
+	sort_arr(arr, stack->size);
+	node = stack->head;
+	i = 0;
+	while (i < stack->size)
+	{
+		node->index = get_index(arr, node->value, stack->size);
+		node = node->next;
+		i++;
+	}
+	free(arr);
 }

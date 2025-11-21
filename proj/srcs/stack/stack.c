@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 11:37:08 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 12:29:03 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/21 18:46:32 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ t_stack	*stack_new(void)
 	return (stack);
 }
 
-t_stack	*stack_create(char **param, size_t size)
+
+t_stack	*stack_create(long *arr, size_t size)
 {
 	t_stack	*stack;
 	t_node	*newnode;
@@ -34,7 +35,7 @@ t_stack	*stack_create(char **param, size_t size)
 		return (NULL);
 	while (size--)
 	{
-		newnode = nodenew(ft_atoi(param[size]));
+		newnode = nodenew(arr[size]);
 		if (newnode == NULL)
 		{
 			stack_free(stack);
@@ -65,3 +66,4 @@ void	stack_free(t_stack *stack)
 	}
 	free(stack);
 }
+

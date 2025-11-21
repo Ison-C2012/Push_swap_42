@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_long.c                                        :+:      :+:    :+:   */
+/*   sort_radix.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 11:13:08 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 16:11:42 by keitotak         ###   ########.fr       */
+/*   Created: 2025/11/21 15:06:17 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/21 15:25:41 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-void	sort_long(t_stack *a, t_stack *b)
+long	*get_arr(long *arr, t_node *node, size_t size)
 {
-	
-	while (1)
+	size_t	i;
+
+	i = 0;
+	while (i < size)
 	{
-		if (is_sorted(a) && b->size == 0)
-			break ;
-		j = 0;
-		while (j < 10)
-		{
-			pb(b, a);
-			
-			j++;
-		}
-		while 
-		if ()
+		arr[i] = node->value;
+		node = node->next;
+		i++;
 	}
-	print_stack(a, b);
+	return (arr);
 }
-*/
+
+unsigned int	get_index(long *arr, int value, size_t size)
+{
+	unsigned int	index;
+
+	index = 0;
+	while (index < size)
+	{
+		if (arr[index] == value)
+			break ;
+		index++;
+	}
+	return (index);
+}
+

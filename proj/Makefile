@@ -5,8 +5,9 @@ SRCDIR	:=	srcs
 OBJDIR	:=	objs
 ARCDIR	:=	libft
 
-SRCS	:=	check/check_param.c \
-			main/main.c \
+SRCS	:=	main/main.c \
+			array/array.c \
+			check/check.c \
 			node/node.c \
 			operate/push.c \
 			operate/rev_rotate.c \
@@ -18,7 +19,11 @@ SRCS	:=	check/check_param.c \
 			print/print_stack.c \
 			print/print_swap.c \
 			process/push_swap.c \
+			sort/sort_arr.c \
+			sort/sort_getlen.c \
 			sort/sort_helper.c \
+			sort/sort_long.c \
+			sort/sort_radix.c \
 			sort/sort_short.c \
 			stack/stack.c 
 OBJS	:=	$(SRCS:%.c=$(OBJDIR)/%.o)
