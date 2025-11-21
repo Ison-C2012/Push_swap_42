@@ -52,7 +52,7 @@ void	sort_three_asc_a(t_stack *a)
 		ra(a);
 }
 
-void	sort_two_dec_b(t_stack *b)
+void	sort_two_dsc_b(t_stack *b)
 {
 	int	x;
 	int	y;
@@ -77,7 +77,7 @@ void	sort_ufive(t_stack *a, t_stack *b)
 		pb(b, a);
 	}
 	sort_three_asc_a(a);
-	sort_two_dec_b(b);
+	sort_two_dsc_b(b);
 	while (b->size)
 		pa(a, b);
 }

@@ -6,14 +6,11 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:41:28 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 00:11:48 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/21 11:09:35 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-#define TRUE 0
-#define FALSE 1
 
 /*You must delete this function when you submit your project.
  This function is used only to detect error for test.*/
@@ -68,9 +65,9 @@ int	check_param(size_t cnt, char **param)
 	i = 0;
 	while (i < cnt)
 	{
-		if (is_nbr(param[i]))
+		if (is_nbr(param[i]) == FALSE)
 			return (FALSE);
-		if (is_exist(param, i))
+		if (is_exist(param, i) == FALSE)
 			return (FALSE);
 		i++;
 	}

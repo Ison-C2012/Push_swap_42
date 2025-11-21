@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:32 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 00:14:32 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/21 12:28:54 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include "libft.h"
 # include "libft_bonus.h"
 # include "ft_printf.h"
+
+#define TRUE 1
+#define FALSE 0
 
 typedef struct s_node
 {
@@ -46,17 +49,19 @@ t_stack	*nodecut(t_stack *stack);
 
 /*main file*/
 
-/*process*/
-void	push_swap(t_stack *a, t_stack *b);
-
 /*check*/
 int		check_param(size_t cnt, char *param[]);
 
+/*process*/
+void	push_swap(t_stack *a, t_stack *b);
+
 /*sort*/
 void	sort_two_asc_a(t_stack *a);
-void	sort_two_dec_b(t_stack *b);
+void	sort_two_dsc_b(t_stack *b);
 void	sort_three_asc_a(t_stack *a);
 void	sort_ufive(t_stack *a, t_stack *b);
+void	sort_long(t_stack *a, t_stack *b);
+int		is_sorted(t_stack *stack);
 size_t	getlen_tomin(t_stack *stack);
 
 /*operate*/

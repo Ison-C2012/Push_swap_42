@@ -24,8 +24,8 @@ SRCS	:=	check/check_param.c \
 OBJS	:=	$(SRCS:%.c=$(OBJDIR)/%.o)
 ARCS	:=	libft.a
 
-CC		:=	cc
-CFLAGS	:=	-Wall -Wextra -Werror
+CC		:=	gcc
+CFLAGS	:=	-g3 -Wall -Wextra -Werror
 MKDIR	:=	mkdir -p
 
 all: $(NAME)
