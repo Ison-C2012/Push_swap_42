@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:41:28 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 19:32:01 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 15:56:39 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	error(void)
-{
-	ft_putendl_fd("Error", STDOUT);
-	return ;
-}
 
 int	is_sign(char c)
 {
@@ -62,4 +56,37 @@ int	is_integer_int(char *str)
 	if (integer > INT_MAX || integer < INT_MIN)
 		return (FALSE);
 	return (TRUE);
+}
+
+int	is_arr_unique(long *arr, size_t size)
+{
+	size_t	i;
+
+	sort_arr(arr, size);
+	i = 1;
+	while (i < size)
+	{
+		if (arr[i] == arr[i - 1])
+			return (FALSE);
+		i++;
+	}
+	return (TRUE);
+}
+
+int	is_sorted(t_stack *stack)
+{
+	t_node	*node;
+	size_t	i;
+
+	node = stack->head;
+	i = 0;
+	while (i++ < stack->size)
+	{
+		if (node->value > node->next->value)
+			break ;
+		node = node->next;
+	}
+	if (i == stack->size)
+		return (TRUE);
+	return (FALSE);
 }

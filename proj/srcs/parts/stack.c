@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 11:37:08 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 18:46:32 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 19:08:33 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ t_stack	*stack_new(void)
 
 	stack = (t_stack *)malloc(1 * sizeof(t_stack));
 	if (stack == NULL)
-		return (NULL);
+		return (err_malloc(), NULL);
 	stack->head = NULL;
 	stack->size = 0;
 	return (stack);
 }
-
 
 t_stack	*stack_create(long *arr, size_t size)
 {
@@ -66,4 +65,3 @@ void	stack_free(t_stack *stack)
 	}
 	free(stack);
 }
-

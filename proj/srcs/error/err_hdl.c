@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   err_hdl.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 22:23:48 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/22 15:38:45 by keitotak         ###   ########.fr       */
+/*   Created: 2025/11/22 15:47:20 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/22 19:08:04 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(t_stack *a, t_stack *b)
+void	err_input(long *arr)
 {
-	if (a->size == 1 || is_sorted(a))
-		return ;
-	else if (a->size <= 5)
-		sort_short(a, b);
-	else
-		sort_long(a, b);
+	free(arr);
+	ft_putendl_fd("Error", STDOUT);
+	exit(EXIT_FAILURE);
+}
+
+void	err_malloc(void)
+{
+	ft_putendl_fd("Error: Memory Allocation", STDOUT);
+	exit(EXIT_FAILURE);
 }

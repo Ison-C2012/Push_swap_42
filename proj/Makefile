@@ -6,31 +6,32 @@ OBJDIR	:=	objs
 ARCDIR	:=	libft
 
 SRCS	:=	main/main.c \
-			array/array.c \
+			parts/array.c \
+			parts/stack.c \
+			parts/node.c \
 			check/check.c \
-			node/node.c \
-			operate/push.c \
-			operate/rev_rotate.c \
-			operate/rotate.c \
-			operate/swap.c \
-			print/print_push.c \
-			print/print_rotate.c \
-			print/print_rrotate.c \
-			print/print_stack.c \
-			print/print_swap.c \
+			error/err_hdl.c \
 			process/push_swap.c \
-			sort/sort_arr.c \
-			sort/sort_getlen.c \
-			sort/sort_helper.c \
+			sort/sort_short.c \
 			sort/sort_long.c \
 			sort/sort_radix.c \
-			sort/sort_short.c \
-			stack/stack.c 
+			sort/sort_helper.c \
+			operate/push.c \
+			operate/swap.c \
+			operate/rotate.c \
+			operate/rev_rotate.c \
+			print/print_push.c \
+			print/print_swap.c \
+			print/print_rotate.c \
+			print/print_rrotate.c \
+			print/print_stack.c
 OBJS	:=	$(SRCS:%.c=$(OBJDIR)/%.o)
 ARCS	:=	libft.a
 
 CC		:=	gcc
-CFLAGS	:=	-g3 -Wall -Wextra -Werror
+CFLAGS	:=	-Wall -Wextra -Werror 
+#CFLAGS	:=	-Wall -Wextra -Werror -g3
+#CFLAGS	:=	-Wall -Wextra -Werror -g3 -fsanitize=address
 MKDIR	:=	mkdir -p
 
 all: $(NAME)

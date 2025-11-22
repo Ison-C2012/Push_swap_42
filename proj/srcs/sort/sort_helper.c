@@ -1,31 +1,83 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_helper.c                                      :+:      :+:    :+:   */
+/*   sort_getlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 23:21:27 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 12:02:09 by keitotak         ###   ########.fr       */
+/*   Created: 2025/11/21 12:01:27 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/22 15:44:25 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sorted(t_stack *stack)
+size_t	getlen_tomin(t_stack *stack)
 {
-	t_node	*node;
+	size_t	len;
 	size_t	i;
+	int		min;
+	t_node	*node;
 
-	node = stack->head;
 	i = 0;
-	while (i++ < stack->size)
+	len = i;
+	min = stack->head->value;
+	node = stack->head;
+	while (i < stack->size)
+	{
+		if (node->value < min)
+		{
+			min = node->value;
+			len = i;
+		}
+		node = node->next;
+		i++;
+	}
+	return (len);
+}
+
+/*
+int	getlen_asc_back(t_stack *stack)
+{
+	int		len;
+	t_node	*node;
+
+	len = 0;
+	node = stack->head;
+	while (node->prev != stack->head)
+	{
+		if (node->value < node->prev->value)
+			break ;
+		len++;
+		node = node->prev;
+	}
+	return (len);
+}
+
+int	getlen_asc_forwd(t_stack *stack)
+{
+	int		len;
+	t_node	*node;
+
+	len = 0;
+	node = stack->head;
+	while (node->next != stack->head)
 	{
 		if (node->value > node->next->value)
 			break ;
+		len++;
 		node = node->next;
 	}
-	if (i == stack->size)
-		return (TRUE);
-	return (FALSE);
+	return (len);
 }
+
+int	getlen_ascend(t_stack *stack)
+{
+	int	forwd;
+	int	back;
+
+	forwd = getlen_asc_forwd(stack);
+	back = getlen_asc_back(stack);
+	return (forwd * (forwd >= back) - back * (forwd < back));
+}
+*/

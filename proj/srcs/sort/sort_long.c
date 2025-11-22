@@ -3,33 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_long.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:13:08 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 16:11:42 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 16:09:58 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
 void	sort_long(t_stack *a, t_stack *b)
 {
-	
-	while (1)
-	{
-		if (is_sorted(a) && b->size == 0)
-			break ;
-		j = 0;
-		while (j < 10)
-		{
-			pb(b, a);
-			
-			j++;
-		}
-		while 
-		if ()
-	}
-	print_stack(a, b);
+	sort_radix(a, b);
 }
-*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:32 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 19:22:07 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 19:08:55 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include "libft_bonus.h"
 # include "ft_printf.h"
 
-#define TRUE 1
-#define FALSE 0
+# define TRUE 1
+# define FALSE 0
 
 typedef struct s_node
 {
@@ -38,13 +38,8 @@ typedef struct s_stack
 }	t_stack;
 
 /*array*/
-void	get_arg_into_arr(long *arr, char **args, size_t size);
-
-/*check*/
-int		is_sign(char c);
-int		is_number(char *str);
-int		is_integer_int(char *str);
-void	error(void);
+long	*get_arg_into_arr(char **args, size_t size);
+void	sort_arr(long *arr, size_t size);
 
 /*stack*/
 t_stack	*stack_create(long *arr, size_t size);
@@ -55,22 +50,26 @@ void	stack_free(t_stack *stack);
 t_node	*nodenew(int value);
 t_stack	*nodeadd(t_stack *stack, t_node *new);
 t_stack	*nodecut(t_stack *stack);
-void	node_setindex(t_stack *stack);
+
+/*check*/
+int		is_sign(char c);
+int		is_number(char *str);
+int		is_integer_int(char *str);
+int		is_arr_unique(long *arr, size_t size);
+int		is_sorted(t_stack *stack);
+
+/*error handle*/
+void	err_input(long *arr);
+void	err_malloc(void);
 
 /*process*/
 void	push_swap(t_stack *a, t_stack *b);
 
 /*sort*/
-void	sort_two_asc_a(t_stack *a);
-void	sort_two_dsc_b(t_stack *b);
-void	sort_three_asc_a(t_stack *a);
-void	sort_ufive(t_stack *a, t_stack *b);
+void	sort_short(t_stack *a, t_stack *b);
 void	sort_long(t_stack *a, t_stack *b);
-void	sort_arr(long *arr, size_t size);
-int		is_sorted(t_stack *stack);
+void	sort_radix(t_stack *a, t_stack *b);
 size_t	getlen_tomin(t_stack *stack);
-long	*get_arr(long *arr, t_node *node, size_t size);
-unsigned int	get_index(long *arr, int value, size_t size);
 
 /*operate*/
 void	sa(t_stack *a);

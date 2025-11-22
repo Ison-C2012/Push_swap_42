@@ -1,11 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */ /*   main.c                                             :+:      :+:    :+:   */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 22:14:54 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/21 19:02:48 by keitotak         ###   ########.fr       */
+/*   Created: 2025/11/22 17:13:55 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/22 18:59:52 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +25,11 @@ int	main(int argc, char *argv[])
 
 	if (argc == NO_ARG)
 		return (0);
-	array = (long *)malloc((argc - 1) * sizeof(long));
-	if (array == NULL)
-		exit(1);
-	get_arg_into_arr(array, &argv[1], argc - 1);
+	array = get_arg_into_arr(&argv[1], argc - 1);
 	a = stack_create(array, argc - 1);
 	b = stack_create((long *) NULL, 0);
-//	print_stack(a, b);
 	push_swap(a, b);
+	free(array);
 	stack_free(a);
 	stack_free(b);
 	return (0);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_short.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 18:52:38 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/20 23:58:13 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 17:12:39 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_two_asc_a(t_stack *a)
+static void	sort_two_asc_a(t_stack *a)
 {
 	int	x;
 	int	y;
@@ -23,7 +23,7 @@ void	sort_two_asc_a(t_stack *a)
 		sa(a);
 }
 
-void	sort_three_asc_a(t_stack *a)
+static void	sort_three_asc_a(t_stack *a)
 {
 	int	x;
 	int	y;
@@ -52,7 +52,7 @@ void	sort_three_asc_a(t_stack *a)
 		ra(a);
 }
 
-void	sort_two_dsc_b(t_stack *b)
+static void	sort_two_dsc_b(t_stack *b)
 {
 	int	x;
 	int	y;
@@ -63,7 +63,7 @@ void	sort_two_dsc_b(t_stack *b)
 		sb(b);
 }
 
-void	sort_ufive(t_stack *a, t_stack *b)
+static void	sort_ufive(t_stack *a, t_stack *b)
 {
 	size_t	len;
 
@@ -80,4 +80,14 @@ void	sort_ufive(t_stack *a, t_stack *b)
 	sort_two_dsc_b(b);
 	while (b->size)
 		pa(a, b);
+}
+
+void	sort_short(t_stack *a, t_stack *b)
+{
+	if (a->size == 2)
+		sort_two_asc_a(a);
+	else if (a->size == 3)
+		sort_three_asc_a(a);
+	else
+		sort_ufive(a, b);
 }
