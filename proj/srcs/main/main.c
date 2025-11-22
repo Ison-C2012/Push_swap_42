@@ -15,7 +15,18 @@
 #define SUCCESS 0
 #define NO_ARG 1
 
-/*main func checks its arguments and pass them to push_swap func.*/
+/*
+CMDL arguments are allowed when each arg is just a interger.
+these are not allowed:
+./push_swap "1 3 2 4"
+./push_swap "1" "3" "2" "4"
+./push_swap 1 3 "2 4"
+./push_swap --1 3 2 4
+./push_swap + 3 2 4
+it's also not allowed in case of overflow:
+./push_swap 2147483648 3 2 4
+./push_swap 1 3 2 -2147483649
+*/
 
 int	main(int argc, char *argv[])
 {

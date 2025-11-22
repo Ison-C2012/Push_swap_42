@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 01:25:03 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/22 18:58:21 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 22:23:01 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_node	*nodenew(int value)
 
 	new = (t_node *)malloc(1 * sizeof(t_node));
 	if (new == NULL)
-		return (err_malloc(), NULL);
+		return (NULL);
 	new->value = value;
 	new->index = 0;
 	new->next = NULL;

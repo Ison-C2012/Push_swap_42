@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 19:09:00 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/22 19:03:24 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 22:29:33 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static long	*dup_arr(long *arr, size_t size)
 
 	dup = (long *)malloc(size * sizeof(long));
 	if (dup == NULL)
-		return (err_malloc(), NULL);
+		return (free(arr), err_malloc(), NULL);
 	i = 0;
 	while (i < size)
 	{
@@ -74,15 +74,17 @@ long	*get_arg_into_arr(char **args, size_t size)
 	i = 0;
 	while (i < size)
 	{
+		if (args[i][0] == '\0')
+			return (free(arr), err_input(), NULL);
 		if (!is_number(args[i]))
-			return (err_input(arr), NULL);
+			return (free(arr), err_input(), NULL);
 		if (!is_integer_int(args[i]))
-			return (err_input(arr), NULL);
+			return (free(arr), err_input(), NULL);
 		arr[i] = ft_atoi(args[i]);
 		i++;
 	}
 	tmp = dup_arr(arr, size);
 	if (!is_arr_unique(tmp, size))
-		return (free(tmp), err_input(arr), NULL);
+		return (free(tmp), free(arr), err_input(), NULL);
 	return (free(tmp), arr);
 }

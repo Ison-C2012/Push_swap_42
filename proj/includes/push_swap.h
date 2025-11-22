@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:32 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/22 19:19:58 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 22:17:42 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		is_arr_unique(long *arr, size_t size);
 int		is_sorted(t_stack *stack);
 
 /*error handle*/
-void	err_input(long *arr);
+void	err_input(void);
 void	err_malloc(void);
 
 /*process*/

@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 11:37:08 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/22 19:08:33 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 22:37:39 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*stack_new(void)
 
 	stack = (t_stack *)malloc(1 * sizeof(t_stack));
 	if (stack == NULL)
-		return (err_malloc(), NULL);
+		return (NULL);
 	stack->head = NULL;
 	stack->size = 0;
 	return (stack);
@@ -31,15 +31,12 @@ t_stack	*stack_create(long *arr, size_t size)
 
 	stack = stack_new();
 	if (stack == NULL)
-		return (NULL);
+		return (free(arr), err_malloc(), NULL);
 	while (size--)
 	{
 		newnode = nodenew(arr[size]);
 		if (newnode == NULL)
-		{
-			stack_free(stack);
-			return (NULL);
-		}
+			return (stack_free(stack), free(arr), err_malloc(), NULL);
 		stack = nodeadd(stack, newnode);
 	}
 	return (stack);
@@ -54,13 +51,13 @@ t_stack	*stack_movehead(t_stack *stack, size_t len, void (*f)(t_stack*))
 
 void	stack_free(t_stack *stack)
 {
-	t_node	*tmp;
+	t_node	*next;
 
 	while (stack->size)
 	{
-		tmp = stack->head->next;
+		next = stack->head->next;
 		free(stack->head);
-		stack->head = tmp;
+		stack->head = next;
 		stack->size--;
 	}
 	free(stack);
