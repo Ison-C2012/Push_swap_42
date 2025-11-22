@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 17:13:55 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/22 19:25:29 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 19:27:57 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	main(int argc, char *argv[])
 		return (0);
 	array = get_arg_into_arr(&argv[1], argc - 1);
 	a = stack_create(array, argc - 1);
+	free(array);
 	b = stack_create((long *) NULL, 0);
 	push_swap(a, b);
-	free(array);
 	stack_free(a);
 	stack_free(b);
 	return (0);
