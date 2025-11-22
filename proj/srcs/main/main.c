@@ -6,14 +6,13 @@
 /*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 17:13:55 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/22 18:59:52 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 19:25:29 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 #define NO_ARG 1
-#define ERROR 1
 
 /*main func checks its arguments and pass them to push_swap func.*/
 
