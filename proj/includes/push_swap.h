@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:32 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/22 19:08:55 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 19:19:58 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <stddef.h>
 # include <stdio.h>
 
-# include "libft.h"
-# include "libft_bonus.h"
-# include "ft_printf.h"
+# include "../libft/includes/libft.h"
+# include "../libft/includes/libft_bonus.h"
+# include "../libft/includes/ft_printf.h"
 
 # define TRUE 1
 # define FALSE 0
