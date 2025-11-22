@@ -52,7 +52,7 @@ static long	*dup_arr(long *arr, size_t size)
 
 	dup = (long *)malloc(size * sizeof(long));
 	if (dup == NULL)
-		return (free(arr), err_malloc(), NULL);
+		return (free(arr), err_exit(), NULL);
 	i = 0;
 	while (i < size)
 	{
@@ -70,21 +70,21 @@ long	*get_arg_into_arr(char **args, size_t size)
 
 	arr = (long *)malloc(size * sizeof(long));
 	if (arr == NULL)
-		return (err_malloc(), NULL);
+		return (err_exit(), NULL);
 	i = 0;
 	while (i < size)
 	{
 		if (args[i][0] == '\0')
-			return (free(arr), err_input(), NULL);
+			return (free(arr), err_exit(), NULL);
 		if (!is_number(args[i]))
-			return (free(arr), err_input(), NULL);
+			return (free(arr), err_exit(), NULL);
 		if (!is_integer_int(args[i]))
-			return (free(arr), err_input(), NULL);
+			return (free(arr), err_exit(), NULL);
 		arr[i] = ft_atoi(args[i]);
 		i++;
 	}
 	tmp = dup_arr(arr, size);
 	if (!is_arr_unique(tmp, size))
-		return (free(tmp), free(arr), err_input(), NULL);
+		return (free(tmp), free(arr), err_exit(), NULL);
 	return (free(tmp), arr);
 }

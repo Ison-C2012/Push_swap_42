@@ -48,7 +48,7 @@ static void	setindex(t_stack *stack)
 
 	arr = (long *)malloc(stack->size * sizeof(long));
 	if (arr == NULL)
-		err_malloc();
+		err_exit();
 	arr = get_arr(arr, stack->head, stack->size);
 	sort_arr(arr, stack->size);
 	node = stack->head;

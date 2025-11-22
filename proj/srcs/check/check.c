@@ -6,11 +6,14 @@
 /*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:41:28 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/22 21:53:24 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/23 00:12:16 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+#define TRUE 1
+#define FALSE 0
 
 int	is_sign(char c)
 {

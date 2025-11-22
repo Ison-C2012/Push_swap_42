@@ -31,12 +31,12 @@ t_stack	*stack_create(long *arr, size_t size)
 
 	stack = stack_new();
 	if (stack == NULL)
-		return (free(arr), err_malloc(), NULL);
+		return (free(arr), err_exit(), NULL);
 	while (size--)
 	{
 		newnode = nodenew(arr[size]);
 		if (newnode == NULL)
-			return (stack_free(stack), free(arr), err_malloc(), NULL);
+			return (stack_free(stack), free(arr), err_exit(), NULL);
 		stack = nodeadd(stack, newnode);
 	}
 	return (stack);

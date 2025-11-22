@@ -6,18 +6,11 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 14:20:41 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/22 17:17:56 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 23:50:15 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*
-void	print_stack_size(t_stack *a, t_stack *b)
-{
-	ft_printf("a:%d\tb:%d\n", a->size, b->size);
-}
-*/
 
 void	print_stack(t_stack *a, t_stack *b)
 {

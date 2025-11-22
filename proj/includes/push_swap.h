@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:45:32 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/22 22:17:42 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/22 23:54:51 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@
 # include "../libft/includes/libft.h"
 # include "../libft/includes/libft_bonus.h"
 # include "../libft/includes/ft_printf.h"
-
-# define TRUE 1
-# define FALSE 0
 
 typedef struct s_node
 {
@@ -59,8 +56,7 @@ int		is_arr_unique(long *arr, size_t size);
 int		is_sorted(t_stack *stack);
 
 /*error handle*/
-void	err_input(void);
-void	err_malloc(void);
+void	err_exit(void);
 
 /*process*/
 void	push_swap(t_stack *a, t_stack *b);
