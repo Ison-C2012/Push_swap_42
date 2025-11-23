@@ -28,9 +28,9 @@ SRCS	:=	main/main.c \
 OBJS	:=	$(SRCS:%.c=$(OBJDIR)/%.o)
 ARCS	:=	libft.a
 
-CC		:=	gcc
-#CFLAGS	:=	-Wall -Wextra -Werror 
-CFLAGS	:=	-Wall -Wextra -Werror -g3
+CC		:=	cc
+CFLAGS	:=	-Wall -Wextra -Werror 
+#CFLAGS	:=	-Wall -Wextra -Werror -g3
 #CFLAGS	:=	-Wall -Wextra -Werror -g3 -fsanitize=address
 MKDIR	:=	mkdir -p
 
